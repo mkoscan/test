@@ -1,5 +1,3 @@
 {
-    "defaultCommandTimeout" : 2000,
-    "viewportHeight":1300,
-    "viewportWidth":1900
+    "baseUrl": "https://marija-qa.meridian360.io/portal"
 }

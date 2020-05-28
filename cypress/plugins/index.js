@@ -15,21 +15,8 @@
 /**
  * @type {Cypress.PluginConfig}
  */
-module.exports = (on, config) => {
-  // `on` is used to hook into various events Cypress emits
-  // `config` is the resolved Cypress config
-}
-
-let percyHealthCheck = require('@percy/cypress/task')
+const { PuppeteerLogin } = require('../__helpers__/login.pupeteer')
 
 module.exports = (on, config) => {
-  on("task", percyHealthCheck);
-};
-
-const {GoogleSocialLogin} = require('cypress-social-logins').plugins
-
-module.exports = (on, config) => {
-  on('task', {
-    GoogleSocialLogin: GoogleSocialLogin
-  })
+  on('task', { 'Login': PuppeteerLogin })
 }
