@@ -16,6 +16,10 @@ export const loginOptions = (prop) => {
 export const login = (loginOptions) => {
     cy.task('Login', loginOptions).then(({ cookies }) => {
         cy.clearCookies()
-        cookies.forEach(c => cy.setCookie(c.name, c.value))
+        cookies.forEach(c => {
+            if (c.name !== '__Secure-3PSID') {
+                cy.setCookie(c.name, c.value)
+            }
+        })
     })
 }
